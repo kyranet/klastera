@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A powerful discord.js sharder using Veza and written in TypeScript",
   "main": "dist/index.js",
-  "repository": "https://github.com/kyranet/Klastera",
+  "repository": "https://github.com/kyranet/klastera",
   "author": "Antonio Román <kyradiscord@gmail.com>",
   "license": "MIT",
   "private": false,
@@ -11,16 +11,20 @@
     "extends": "bamboo"
   },
   "devDependencies": {
+    "@types/node": "^12.11.1",
+    "@types/node-fetch": "^2.5.2",
     "@typescript-eslint/eslint-plugin": "^2.4.0",
     "@typescript-eslint/parser": "^2.4.0",
     "eslint": "^6.5.1",
     "eslint-config-bamboo": "^3.0.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.0-dev.20191016"
   },
   "dependencies": {
+    "@klasa/utils": "^0.0.1",
     "veza": "^1.1.0"
   },
   "peerDependencies": {
-    "discord.js": "discordjs/discord.js#3393/head"
+    "discord.js": "discordjs/discord.js#3393/head",
+    "node-fetch": "^2.6.0"
   }
 }

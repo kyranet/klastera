@@ -1,3 +1,7 @@
 {
-	"extends": "eslint-config-bamboo"
+	"extends": "eslint-config-bamboo",
+	"compilerOptions": {
+		"types": ["node", "node-fetch"],
+		"target": "es2020"
+	}
 }
