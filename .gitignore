@@ -1,0 +1,13 @@
+node_modules/
+package-lock.json
+.vs/
+.idea/
+dist/
+*.js
+*.js.map
+*.tsbuildinfo
+*.tgz
+
+# Test and Coverage results and files
+test.xml
+.nyc_output/

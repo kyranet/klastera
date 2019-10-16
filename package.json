@@ -1,0 +1,26 @@
+{
+  "name": "klastera",
+  "version": "0.0.1",
+  "description": "A powerful discord.js sharder using Veza and written in TypeScript",
+  "main": "dist/index.js",
+  "repository": "https://github.com/kyranet/Klastera",
+  "author": "Antonio Román <kyradiscord@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "eslintConfig": {
+    "extends": "bamboo"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "eslint": "^6.5.1",
+    "eslint-config-bamboo": "^3.0.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "veza": "^1.1.0"
+  },
+  "peerDependencies": {
+    "discord.js": "discordjs/discord.js#3393/head"
+  }
+}
