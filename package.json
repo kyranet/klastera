@@ -11,7 +11,7 @@
     "extends": "bamboo"
   },
   "devDependencies": {
-    "@types/node": "^12.11.2",
+    "@types/node": "^12.11.5",
     "@types/node-fetch": "^2.5.2",
     "@typescript-eslint/eslint-plugin": "^2.5.0",
     "@typescript-eslint/parser": "^2.5.0",
