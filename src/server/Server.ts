@@ -24,6 +24,7 @@ export interface DiscordError {
 const serverHardPrivates = new WeakMap<Server, string | null>();
 
 export class Server extends VezaServer {
+
 	/**
 	 * The child processes this server has access to.
 	 */
@@ -140,136 +141,137 @@ export class Server extends VezaServer {
 		if (!statSync(childProcessPath).isFile()) throw new Error('The childProcessPath did not resolve to a file.');
 		return childProcessPath;
 	}
+
 }
 
 export interface Server {
 	/**
-     * Emitted when the server receives data.
-     */
+	 * Emitted when the server receives data.
+	 */
 	on(event: 'raw', listener: (data: Uint8Array, client: ServerSocket) => void): this;
-    /**
-     * Emitted when the server opens.
-     */
+	/**
+	 * Emitted when the server opens.
+	 */
 	on(event: 'open', listener: () => void): this;
-    /**
-     * Emitted when the server closes.
-     */
+	/**
+	 * Emitted when the server closes.
+	 */
 	on(event: 'close', listener: () => void): this;
-    /**
-     * Emitted when an error occurs.
-     */
+	/**
+	 * Emitted when an error occurs.
+	 */
 	on(event: 'error', listener: (error: Error | NetworkError, client: ServerSocket | null) => void): this;
-    /**
-     * Emitted when a new connection is made and set up.
-     */
+	/**
+	 * Emitted when a new connection is made and set up.
+	 */
 	on(event: 'connect', listener: (client: ServerSocket) => void): this;
-    /**
-     * Emitted when a client disconnects from the server.
-     */
+	/**
+	 * Emitted when a client disconnects from the server.
+	 */
 	on(event: 'disconnect', listener: (client: ServerSocket) => void): this;
-    /**
-     * Emitted when the server receives and parsed a message.
-     */
+	/**
+	 * Emitted when the server receives and parsed a message.
+	 */
 	on(event: 'message', listener: (message: NodeMessage, client: ServerSocket) => void): this;
 	/**
 	 * Emitted when the sharding manager processes something.
 	 */
 	on(event: 'debug', listener: (message: string) => void): this;
-    /**
-     * Emitted when the server receives data.
-     */
+	/**
+	 * Emitted when the server receives data.
+	 */
 	once(event: 'raw', listener: (data: Uint8Array, client: ServerSocket) => void): this;
-    /**
-     * Emitted when the server opens.
-     */
+	/**
+	 * Emitted when the server opens.
+	 */
 	once(event: 'open', listener: () => void): this;
-    /**
-     * Emitted when the server closes.
-     */
+	/**
+	 * Emitted when the server closes.
+	 */
 	once(event: 'close', listener: () => void): this;
-    /**
-     * Emitted when an error occurs.
-     */
+	/**
+	 * Emitted when an error occurs.
+	 */
 	once(event: 'error', listener: (error: Error | NetworkError, client: ServerSocket | null) => void): this;
-    /**
-     * Emitted when a new connection is made and set up.
-     */
+	/**
+	 * Emitted when a new connection is made and set up.
+	 */
 	once(event: 'connect', listener: (client: ServerSocket) => void): this;
-    /**
-     * Emitted when a client disconnects from the server.
-     */
+	/**
+	 * Emitted when a client disconnects from the server.
+	 */
 	once(event: 'disconnect', listener: (client: ServerSocket) => void): this;
-    /**
-     * Emitted once when a server is ready.
-     */
+	/**
+	 * Emitted once when a server is ready.
+	 */
 	once(event: 'ready', listener: () => void): this;
-    /**
-     * Emitted when the server receives and parsed a message.
-     */
+	/**
+	 * Emitted when the server receives and parsed a message.
+	 */
 	once(event: 'message', listener: (message: NodeMessage, client: ServerSocket) => void): this;
 	/**
 	 * Emitted when the sharding manager processes something.
 	 */
 	once(event: 'debug', listener: (message: string) => void): this;
-    /**
-     * Emitted when the server receives data.
-     */
+	/**
+	 * Emitted when the server receives data.
+	 */
 	off(event: 'raw', listener: (data: Uint8Array, client: ServerSocket) => void): this;
-    /**
-     * Emitted when the server opens.
-     */
+	/**
+	 * Emitted when the server opens.
+	 */
 	off(event: 'open', listener: () => void): this;
-    /**
-     * Emitted when the server closes.
-     */
+	/**
+	 * Emitted when the server closes.
+	 */
 	off(event: 'close', listener: () => void): this;
-    /**
-     * Emitted when an error occurs.
-     */
+	/**
+	 * Emitted when an error occurs.
+	 */
 	off(event: 'error', listener: (error: Error | NetworkError, client: ServerSocket | null) => void): this;
-    /**
-     * Emitted when a new connection is made and set up.
-     */
+	/**
+	 * Emitted when a new connection is made and set up.
+	 */
 	off(event: 'connect', listener: (client: ServerSocket) => void): this;
-    /**
-     * Emitted when a client disconnects from the server.
-     */
+	/**
+	 * Emitted when a client disconnects from the server.
+	 */
 	off(event: 'disconnect', listener: (client: ServerSocket) => void): this;
-    /**
-     * Emitted when the server receives and parsed a message.
-     */
+	/**
+	 * Emitted when the server receives and parsed a message.
+	 */
 	off(event: 'message', listener: (message: NodeMessage, client: ServerSocket) => void): this;
 	/**
 	 * Emitted when the sharding manager processes something.
 	 */
 	off(event: 'debug', listener: (message: string) => void): this;
-    /**
-     * Emits raw data received from the underlying socket.
-     */
+	/**
+	 * Emits raw data received from the underlying socket.
+	 */
 	emit(event: 'raw', data: Uint8Array, client: ServerSocket): boolean;
-    /**
-     * Emits a server open event.
-     */
+	/**
+	 * Emits a server open event.
+	 */
 	emit(event: 'open'): boolean;
-    /**
-     * Emits a server close event.
-     */
+	/**
+	 * Emits a server close event.
+	 */
 	emit(event: 'close'): boolean;
-    /**
-     * Emits a server error event.
-     */
+	/**
+	 * Emits a server error event.
+	 */
 	emit(event: 'error', error: Error | NetworkError, client: ServerSocket | null): boolean;
-    /**
-     * Emits a connection made and set up to the server.
-     */
+	/**
+	 * Emits a connection made and set up to the server.
+	 */
 	emit(event: 'connect', client: ServerSocket): boolean;
-    /**
-     * Emits a disconnection of a client from the server.
-     */
+	/**
+	 * Emits a disconnection of a client from the server.
+	 */
 	emit(event: 'disconnect', client: ServerSocket): boolean;
-    /**
-     * Emits a parsed NodeMessage instance ready for usage.
-     */
+	/**
+	 * Emits a parsed NodeMessage instance ready for usage.
+	 */
 	emit(event: 'message', message: NodeMessage, client: ServerSocket): boolean;
 	/**
 	 * Emits a debug log.
