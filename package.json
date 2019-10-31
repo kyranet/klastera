@@ -20,7 +20,7 @@
     "typescript": "^3.7.0-dev.20191021"
   },
   "dependencies": {
-    "@klasa/utils": "^0.0.1",
+    "@klasa/utils": "^0.0.2",
     "veza": "^1.1.0"
   },
   "peerDependencies": {
